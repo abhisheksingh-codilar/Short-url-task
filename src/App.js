@@ -14,7 +14,8 @@ export default class App extends Component {
     clicked:false,
     btnText:'Shorten It!',
     btnDisabled: false,
-    visible:false
+    visible:false,
+    status:false
   }
 
   urlText = (e) =>{
@@ -34,9 +35,15 @@ export default class App extends Component {
       this.setState({btnText:'Shorten It!',visible:false})
     }
     else{
-      fetch(`https://api.shrtco.de/v2/shorten?url=${this.state.value}`)
+     
+        fetch(`https://api.shrtco.de/v2/shorten?url=${this.state.value}`)
   .then(response => response.json())
-  .then(data =>this.setState({ shortUrl:data.result.short_link, clicked:true, value:data.result.short_link, btnText:"Copy",btnDisabled:false,visible:false}));
+  .then(data =>this.setState({ shortUrl:data.result.short_link, clicked:true, value:data.result.short_link, btnText:"Copy",btnDisabled:false,visible:false,status:data.ok }) );
+ 
+
+  
+        
+      
     }
   
   }
@@ -62,16 +69,21 @@ export default class App extends Component {
 
         <h2>Short Link Generator</h2>
         <form onSubmit={!this.state.clicked ? this.getShortUrl : this.copy } >
-          <input type="text" value={ this.state.value }  onChange={this.urlText} placeholder="Shorten your Url..."/>
-          <button onClick={!this.state.clicked ? this.getShortUrl : this.copy }
-             className={this.state.btnText=='Copied!'? 'btn btn-copied': 'btn' }
-             disabled={this.state.btnDisabled} >{this.state.btnText}</button>
-          </form>
 
-        <div className="url-display">Short Url  :  <span>{this.state.shortUrl}</span></div>
+              <label>Get the  short url :
+
+              <input type="text" value={ this.state.value }  onChange={this.urlText} placeholder="Shorten your Url..."/>
+
+              </label>
+
+              <input  type ="submit" onClick={!this.state.clicked ? this.getShortUrl : this.copy }
+                className={this.state.btnText=='Copied!'? 'btn btn-copied': 'btn' }
+              value={this.state.btnText} />
+
+        </form>
 
       </div>
-
+      
       {this.state.visible ? <Loader /> : null}
       </>
     )
