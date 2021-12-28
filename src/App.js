@@ -4,8 +4,6 @@ import Loader from './Components/Loader';
 
 export default class App extends Component {
 
-  
-
   timer;
 
   state={
@@ -15,18 +13,16 @@ export default class App extends Component {
     btnText:'Shorten It!',
     btnDisabled: false,
     visible:false,
-    status:false
+  
   }
 
   urlText = (e) =>{
     this.setState({value: e.target.value,btnText:"Shorten It!",shortUrl:"",clicked:false})
-  
-
   }
 
   getShortUrl= (e) => {
     e.preventDefault();
-    this.setState({btnDisabled:true});
+  
     this.setState({btnText:'fetching...'} );
     this.setState({visible:true} );
 
@@ -34,16 +30,12 @@ export default class App extends Component {
       alert('Enter any url....');
       this.setState({btnText:'Shorten It!',visible:false})
     }
+
     else{
      
         fetch(`https://api.shrtco.de/v2/shorten?url=${this.state.value}`)
-  .then(response => response.json())
-  .then(data =>this.setState({ shortUrl:data.result.short_link, clicked:true, value:data.result.short_link, btnText:"Copy",btnDisabled:false,visible:false,status:data.ok }) );
- 
-
-  
-        
-      
+            .then(response => response.json())
+            .then(data =>this.setState({ shortUrl:data.result.short_link, clicked:true, value:data.result.short_link, btnText:"Copy",btnDisabled:false,visible:false,status:data.ok }) );
     }
   
   }
@@ -83,7 +75,7 @@ export default class App extends Component {
         </form>
 
       </div>
-      
+
       {this.state.visible ? <Loader /> : null}
       </>
     )
