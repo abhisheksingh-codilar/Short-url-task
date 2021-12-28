@@ -24,11 +24,11 @@ export default class App extends Component {
   }
 
   getShortUrl= (e) => {
+    e.preventDefault();
     this.setState({btnDisabled:true});
     this.setState({btnText:'fetching...'} );
     this.setState({visible:true} );
 
-    e.preventDefault();
    if(this.state.value.length==0 && this.state.value == this.state.shortUrl){
       alert('Enter any url....');
       this.setState({btnText:'Shorten It!',visible:false})
@@ -41,7 +41,8 @@ export default class App extends Component {
   
   }
 
-  copy = () =>{
+  copy = (e) =>{
+    e.preventDefault();
     this.setState({clicked:true})
     navigator.clipboard.writeText(this.state.shortUrl);
     this.setState({btnText:'Copied!'} );
@@ -58,11 +59,14 @@ export default class App extends Component {
     return (
       <>
       <div className="main-container">
+
         <h2>Short Link Generator</h2>
+        <form onSubmit={!this.state.clicked ? this.getShortUrl : this.copy } >
           <input type="text" value={ this.state.value }  onChange={this.urlText} placeholder="Shorten your Url..."/>
           <button onClick={!this.state.clicked ? this.getShortUrl : this.copy }
              className={this.state.btnText=='Copied!'? 'btn btn-copied': 'btn' }
              disabled={this.state.btnDisabled} >{this.state.btnText}</button>
+          </form>
 
         <div className="url-display">Short Url  :  <span>{this.state.shortUrl}</span></div>
 
