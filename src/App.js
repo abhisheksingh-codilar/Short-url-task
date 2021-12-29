@@ -33,7 +33,7 @@ export default class App extends Component {
     }
 
     else{
-     
+      
         fetch(`https://api.shrtco.de/v2/shorten?url=${this.state.value}`)
             .then(response => response.json())
             .then(data => {
@@ -44,6 +44,7 @@ export default class App extends Component {
                 throw Error(data.error),this.setState({error:data.error,btnText:'Shorten It!',visible:false})
               }
             })
+          
             .catch(e => {
               console.log(e);
             })
@@ -56,7 +57,7 @@ export default class App extends Component {
     navigator.clipboard.writeText(this.state.shortUrl);
     this.setState({btnText:'Copied!'} );
     this.timer =setTimeout(() => this.setState({btnText:'Copy'}), 1000);
-      
+
   }
 
   componentWillUnmount() {
@@ -88,7 +89,7 @@ export default class App extends Component {
 
       {this.state.visible ? <Loader /> : null}
 
-      <span>{this.state.error}</span>
+      <span className="error">{this.state.error}</span>
       </>
     )
   }
