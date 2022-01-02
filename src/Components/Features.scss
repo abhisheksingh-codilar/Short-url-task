@@ -1,0 +1,125 @@
+
+.features-outer{
+  
+    background-color: #f0f1f6;
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+
+    .features{
+        width: 82%;
+        margin: 0 auto;
+        .features-heading{
+            text-align: center;
+            width: 50%;
+            margin: 0 auto;
+
+            h2{
+                color: #232127;
+                font-size: 2.7rem;
+                margin: 0;
+                line-height: 1.5rem;
+                letter-spacing: -.15rem;
+            }
+            p{
+                margin-top: 1.8rem;
+                line-height: 2rem;
+                font-size: 1.3rem;
+                color: rgb(158, 154, 167);
+            }
+        }
+
+
+        .brandBoxes{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+
+            .line{
+                background-color: #2acfcf;
+                width: 70%;
+                left: 12rem;
+                position: absolute;
+                height: .6rem;
+                margin-top: 11rem;
+            }
+            .box{
+                width: 350px;
+                padding: 1.5rem;
+                background-color: #fff;
+                margin: 1rem;
+                position: relative;
+                border-radius: .3rem;
+                z-index: 1;
+
+                    .img{
+                        background-color: #3b3054;
+                        border-radius: 50%;
+                        display: inline-block;
+                        padding: 1.5rem;
+                        position: relative;
+                        top: -4rem;
+                        margin: 0;
+                        height: 88px;
+                        width: 88px;
+                    }
+
+                    .box-content{
+
+                        margin-top:-2.5rem ;
+                        
+                        h3{
+                            color: #232127;
+                            letter-spacing: -0.1rem;
+                            font-size: 1.5rem;
+                        }
+                        
+                        p{
+                            color:rgb(158, 154, 167);
+                            font-size: 1.1rem;
+                            margin: 1rem 0;
+                            line-height: 1.5rem;
+                        }
+                    }
+            }
+
+            .detailed{
+                position: relative;
+                top: 3rem;
+            }
+            
+            .fully{
+                position: relative;
+                top: 6rem;
+            }
+        }
+    }
+}
+
+.advertesiment-section-outer{
+    background-image: url('../images/bg-boost-desktop.svg');
+    background-color: #3b3054;
+   
+    .advertesiment-section{
+        height: 14rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        button{
+            margin-top: 2.5rem;
+            border: 1px solid #2acfcf;
+            background-color: #2acfcf;
+            color: #fff;
+            width: 10rem;
+            height: 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 1.5rem;
+            cursor: pointer;
+        }
+            
+        button:hover{
+            background-color: #9bd3d3;}
+
+    }
+}

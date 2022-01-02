@@ -1,0 +1,158 @@
+.searchbar-outer{
+    background-color: #f0f1f6;
+    margin-top: 10rem;
+
+    .searchbar-container{
+    background-color: #3b3054;
+    background-repeat: no-repeat;
+    background-image: url('../images/bg-boost-desktop.svg');
+    width: 82%;
+    margin: 0 auto;
+    height: 9rem;
+    border-radius: .7rem;
+    text-align: center;
+    display: flex;
+    position: relative;
+    top: -4.5rem;
+    }
+
+    form{
+        width: 100%;
+        margin: auto;
+    }
+
+    .urlInput{
+        width: 70%;
+        margin-right: 2rem;
+        height: 3.8rem;
+        padding: 1.3rem;
+        border-radius: .8rem;
+        font-size: 1.4rem;
+        border: 1px solid #fff;
+        color: grey;
+        font-weight: 400;
+        outline: 0;
+    }
+
+    .emptyInput{
+        border: 3px solid #ce5a5a;
+          
+    }
+    .emptyInput::placeholder{
+        color: #ce5a5a;
+    }
+    .empty-error{
+
+        display: block;
+        position: absolute;
+        font-size: 1rem;
+        left: 9.5%;
+        margin-top: 0.25rem;
+        font-style: italic;
+        color: #f46262;
+       
+    }
+    .false-link-error{
+        display: block;
+        position: absolute;
+        font-size: 1rem;
+        left: 9.5%;
+        margin-top: 0.25rem;
+        font-style: italic;
+        color: #f46262;
+    }
+    
+
+    .sub-btn{
+        height: 3.8rem;
+        border: 1px solid #2acfcf;
+        border-radius: .9rem;
+        background-color: #2acfcf;
+        padding: .8rem 1.8rem;
+        font-weight: 600;
+        font-size: 1.2rem;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .sub-btn:hover{
+      background-color: #9bd3d3;
+    }
+
+    .urlCards-outer{
+        margin-top: -4rem;
+        background-color: #f0f1f6;
+    }
+    .urlCards{
+        display: flex;
+        background-color: #fff;
+        width: 82%;
+        padding: 0 2rem;
+        font-size: 1.3rem;
+        border-radius: .5rem;
+        font-weight: 400;
+        height: 5rem;
+        margin: 1rem auto auto;
+        animation: slide 1s cubic-bezier(.25,.46,.45,.94) both;
+        
+        .org-url{
+            color: #3b3054;
+            width: 55%;
+            padding-right: 3rem;
+            margin: auto;
+        }
+         
+        .short-url-container{
+            display: flex;
+            width: 40%;
+            margin-left: 5%;
+
+            .short-url{
+                display: inline-block;
+                text-decoration: none;
+                color: #2acfcf;
+                width: 65%;
+                margin: auto auto auto 10%;
+                cursor: pointer;
+            }
+             .short-url:hover{
+                color: #9e9aa7;
+             }
+
+            .copy-btn {
+                color: #fff;
+                text-align: center;
+                font-weight: 700;
+                margin: auto;
+                border-radius: .4rem;
+                border: 1px solid #2acfcf;
+                background-color: #2acfcf;
+                height: 2.5rem;
+                width: 30%;
+                font-size: 1.2rem;
+                cursor: pointer;
+            }
+            .copy-btn:hover{
+                opacity: 0.5;
+            }
+            
+        }
+    }
+    
+
+}
+
+
+@keyframes slide {
+
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}

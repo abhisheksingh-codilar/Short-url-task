@@ -1,0 +1,230 @@
+.header{
+    width: 82%;
+    margin: 0 auto;
+}
+
+.navbar-desktop{
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+
+    .about{
+        display: flex;
+        a{
+            text-decoration: none;
+            color: #9e9aa7;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px;
+           
+        }
+        a:not(:first-child){
+            padding-top:  19px;
+        }
+        a:hover{
+            color: #000;
+        }
+    }
+
+    .auth{
+        display: flex;
+        align-items: center;
+       
+        
+        .login{
+            background-color: transparent;
+            border: none;
+            color: #9e9aa7;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .login:hover{
+            color: #000;
+        }
+
+
+        .signup{
+            background-color: #2acfcf;
+            color: #fff;
+            font-weight: 600;
+            padding: 2px;
+            border:1px solid #fff;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .signup:hover{
+            opacity: 0.5;
+        }
+    }
+}
+
+
+// navbar-mobile
+
+.navbar-mobile{
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+
+    .icon-img{
+        height: 30px;
+        width: 30px;
+      background: #fff;
+    }
+    
+  }
+
+  .page-link-outer{
+      display: none;
+  }
+
+
+.page-link{
+    font-size: 20px;
+    position: fixed;
+    background-color: rgb(59, 48, 84);
+    height: 400px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+
+    a{
+        text-decoration: none;
+        padding:20px 0;
+        color: #fff;
+        font-weight: 600;
+        
+    }
+
+    span{
+        display: block;
+        background-color: grey;
+        height: .5px;
+        width: 90%;
+        margin: 25px auto;
+        font-weight: 600;
+    }
+
+    .login{
+        background-color: transparent;
+        border: none;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 10px;
+        padding:20px 0;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .signup{
+        background-color: #2acfcf;
+        color: #fff;
+        font-weight: 600;
+        padding: 2px;
+        border:1px solid #fff;
+        font-size: 20px;
+        padding:10px;
+        width: 90%;
+        border-radius: 25px;
+    }
+}
+
+.navbar-mobile-outer{
+    display: none;
+}
+
+
+
+
+  .content-container{
+     color: #35323e;
+    display: flex;
+    margin-top: 50px;
+    
+
+    .content-description{
+        width: 50%;
+        margin-top: 80px;
+        margin-right:95px;
+        h1{
+            font-size: 75px;
+            letter-spacing: -5px;
+            font-weight: 700;
+        }
+        p{
+            margin: 20px 0;
+            color: rgb(158, 154, 167);
+            font-size: 21px;
+            line-height: 32px;
+            font-weight: 500;
+        }
+        button{
+            color: #fff;
+            text-align: center;
+            font-weight: 700;
+            border-radius: 20px;
+            border: 1px solid #2acfcf;
+            background-color: #2acfcf;
+            padding: 13px 32px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        button:hover{
+            opacity: 0.5;
+        }
+    }
+
+    .content-image{
+        width: 50%;
+    }
+  }
+
+
+  @media only screen and (max-width: 850px) {
+    .navbar-mobile-outer{
+        display: block;
+    }
+
+    .navbar-desktop{
+        display: none;
+    }
+    .content-container{
+        flex-direction: column-reverse;
+    
+
+    .content-description{
+        width: 100%;
+    }
+    .content-image{
+        width: 100%;
+    }
+
+    .content-description{
+        text-align: center;
+        margin-top: 3rem;
+        h1{
+            font-size: 42px;
+            letter-spacing: -2.4px;
+            line-height: 48px;
+            font-weight: 700;
+        }
+        p{
+            font-size: 18px;
+            line-height: 28px;
+
+        }
+    }
+}
+
+    
+
+  }
