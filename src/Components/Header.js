@@ -15,9 +15,11 @@ export default class Loader extends Component {
         if(this.state.isClicked){
             
             document.querySelector('.page-link-outer').style.display='none';
+            document.body.style.overflow ="scroll";  
         }
         else{
-            document.querySelector('.page-link-outer').style.display='block';   
+            document.querySelector('.page-link-outer').style.display='block'; 
+            document.body.style.overflow ="hidden";  
         }
         this.setState({isClicked:!this.state.isClicked})
 

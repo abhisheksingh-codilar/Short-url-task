@@ -24,9 +24,6 @@ export default class Searchbar extends Component {
             this.setState({empty:true})
         }
         else{
-
-        
-      
             fetch(`https://api.shrtco.de/v2/shorten?url=${this.state.value}`)
                 .then(response => response.json())
                 .then(data => {if(data.ok){
@@ -79,6 +76,7 @@ export default class Searchbar extends Component {
                         return(
                             <div className="urlCards" key={i}>
                                 <p className="org-url">https://{card.search}</p>
+                                <span className="horizontal-line"></span>
 
                                 <div className="short-url-container">
                                     <a className =" short-url" href={card.url} target="_blank">{card.url}</a>

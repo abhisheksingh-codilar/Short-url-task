@@ -133,10 +133,7 @@
                 font-size: 1.2rem;
                 cursor: pointer;
             }
-            .copy-btn:hover{
-                opacity: 0.5;
-            }
-            
+           
         }
     }
     
@@ -154,5 +151,121 @@
         transform: translateY(0);
         opacity: 1;
     }
+
+}
+
+
+@media only screen and (max-width: 850px) {
+
+    .searchbar-outer{
+        margin-top: 10rem;
+    
+        .searchbar-container{
+        width: 82%;
+        }
+    
+        form{
+            width: 100%;
+            padding: 1.2rem 0;
+        }
+    
+        .urlInput{
+            width: 90%;
+            border-radius: .4rem;
+            margin: auto auto 1.2rem;
+            height: 1.8rem;
+            font-size: 1.1rem;
+            padding-left: .9rem;
+           
+        }
+    
+        .emptyInput{
+            border: 3px solid #ce5a5a;
+              
+        }
+        .emptyInput::placeholder{
+            color: #ce5a5a;
+        }
+        .empty-error{
+            position: relative;
+            margin: -.8rem auto .05rem;
+            text-align: left;
+            width: 90%;
+           
+        }
+        .false-link-error{
+            position: relative;
+            margin: -.8rem auto .05rem;
+            text-align: left;
+            width: 90%;
+        }
+        
+    
+        .sub-btn{
+            width: 90%;
+            border-radius: .4rem;
+            height: 3rem;
+           
+        }
+    
+        .urlCards-outer{
+            margin-top: -4rem;
+            background-color: #f0f1f6;
+        }
+        .urlCards{
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            width: 82%;
+            padding: 0 2rem;
+            font-size: 1.3rem;
+            border-radius: .5rem;
+            font-weight: 400;
+            height: 8rem;
+            margin: 1rem auto auto;
+            animation: slide 1s cubic-bezier(.25,.46,.45,.94) both;
+            
+            .org-url{
+                color: #3b3054;
+                width: 100%;
+                padding-right: 0rem;
+                margin: 0.5rem 0;
+            }
+            .horizontal-line{
+                width: 100%;
+                height: 0.1rem;
+                background-color: rgba(0, 0, 0, 0.089);
+                margin-bottom: 0.2rem;
+            }
+             
+            .short-url-container{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-left: 0%;
+    
+                .short-url{
+                    display: inline-block;
+                    text-decoration: none;
+                    color: #2acfcf;
+                    width: 100%;
+                    margin: 0;
+                    margin-bottom: 0.5rem;
+                    cursor: pointer;
+                }
+                
+    
+                .copy-btn {
+                    width: 100%;
+
+                }
+                
+                
+            }
+        }
+        
+    
+    }
+    
 
 }
