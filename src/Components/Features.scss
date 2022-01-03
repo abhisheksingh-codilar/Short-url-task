@@ -178,3 +178,38 @@
     }
   }
 }
+
+
+
+@media only screen and (max-width: 850px){
+  .advertesiment-section-outer {
+  
+    .advertesiment-section {
+      height: 14rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h1{
+        text-align: center;
+        font-size: 1.8rem;
+      }
+      button {
+        margin-top: 2.5rem;
+        border: 1px solid #2acfcf;
+        background-color: #2acfcf;
+        color: #fff;
+        width: 8rem;
+        height: 2.8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 1.5rem;
+        cursor: pointer;
+      }
+  
+      button:hover {
+        background-color: #9bd3d3;
+      }
+    }
+  }
+}

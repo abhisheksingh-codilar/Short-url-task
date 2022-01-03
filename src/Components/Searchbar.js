@@ -27,7 +27,7 @@ export default class Searchbar extends Component {
             fetch(`https://api.shrtco.de/v2/shorten?url=${this.state.value}`)
                 .then(response => response.json())
                 .then(data => {if(data.ok){
-                    this.setState({cards:[...this.state.cards,{url:data.result.short_link,search:this.state.value,clicked:false}],value:""})
+                    this.setState({cards:[...this.state.cards,{original_url:data.result.original_link,url:data.result.short_link,search:this.state.value,clicked:false}],value:""})
                 }
                 else{
                     this.setState({falseLink:true})
@@ -75,16 +75,16 @@ export default class Searchbar extends Component {
                     this.state.cards.map((card,i) => {
                         return(
                             <div className="urlCards" key={i}>
-                                <p className="org-url">https://{card.search}</p>
+                                <p className="org-url">{card.original_url}</p>
                                 <span className="horizontal-line"></span>
 
                                 <div className="short-url-container">
-                                    <a className =" short-url" href={card.url} target="_blank">{card.url}</a>
+                                    <a className =" short-url" href={card.original_url} target="_blank">{card.url}</a>
                                     <button className ="copy-btn" onClick={() => this.copy(card.url,i)}>Copy</button>
                                 </div>
                             </div>
                         )
-                    })
+                    }).reverse()
                 }
               
             </div>
