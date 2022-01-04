@@ -40,7 +40,7 @@ export default class Searchbar extends Component {
       copy= (url,id) =>{
         navigator.clipboard.writeText(url);
         var elements = document.getElementsByClassName("copy-btn");
-       elements[id].innerHTML ='Copied!';
+       elements[id].innerText ='Copied!';
        elements[id].style.backgroundColor  ='#3b3054';
        elements[id].style.border =' 1px solid #3b3054';
       }
@@ -84,7 +84,7 @@ export default class Searchbar extends Component {
                                 </div>
                             </div>
                         )
-                    }).reverse()
+                    })
                 }
               
             </div>

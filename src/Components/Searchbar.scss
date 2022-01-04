@@ -101,6 +101,9 @@
             width: 55%;
             padding-right: 3rem;
             margin: auto;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
          
         .short-url-container{
@@ -115,6 +118,9 @@
                 width: 65%;
                 margin: auto auto auto 10%;
                 cursor: pointer;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
              .short-url:hover{
                 color: #9e9aa7;
