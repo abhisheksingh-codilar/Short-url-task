@@ -90,11 +90,24 @@
         width: 82%;
         padding: 0 2rem;
         font-size: 1.3rem;
+        align-items: center;
+        justify-content: center;
         border-radius: .5rem;
         font-weight: 400;
         height: 5rem;
         margin: 1rem auto auto;
         animation: slide 1s cubic-bezier(.25,.46,.45,.94) both;
+
+        .del-btn-mobile{
+            display: none;
+        }
+
+        img{
+            margin-left: 1.5%;
+            width: 20px;
+            height: 20px;
+        }
+       
         
         .org-url{
             color: #3b3054;
@@ -139,7 +152,7 @@
                 font-size: 1.2rem;
                 cursor: pointer;
             }
-           
+            
         }
     }
     
@@ -230,6 +243,17 @@
             height: 8rem;
             margin: 1rem auto auto;
             animation: slide 1s cubic-bezier(.25,.46,.45,.94) both;
+
+           
+
+            .del-btn-mobile{
+                display: inline-block;
+                
+            }
+
+            img{
+                display: none;
+            }
             
             .org-url{
                 color: #3b3054;
@@ -263,6 +287,7 @@
     
                 .copy-btn {
                     width: 100%;
+                    margin-bottom: 0.3rem;
 
                 }
                 

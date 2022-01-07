@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Searchbar.scss'
+import cross from '../images/cross.svg';
 
 export default class Searchbar extends Component {
     state={
@@ -28,14 +29,26 @@ export default class Searchbar extends Component {
                 .then(response => response.json())
                 .then(data => {if(data.ok){
                     this.setState({cards:[...this.state.cards,{original_url:data.result.original_link,url:data.result.short_link,search:this.state.value,clicked:false}],value:""})
+                    
                 }
                 else{
                     this.setState({falseLink:true})
                 }
             } )  
+
+            
                        
       }
     }
+     componentDidUpdate(){
+        localStorage.setItem('ShortLinks',JSON.stringify(this.state.cards))
+     }
+    componentWillMount = () =>{
+       this.setState({cards: JSON.parse(localStorage.getItem('ShortLinks'))})
+    }
+    // componentDidMOunt -> after rendering
+    // componentDidUpdate -> UseEffect
+
 
       copy= (url,id) =>{
         navigator.clipboard.writeText(url);
@@ -45,25 +58,28 @@ export default class Searchbar extends Component {
        elements[id].style.border =' 1px solid #3b3054';
       }
 
+      delete = (id) =>{
+        const updatedList =this.state.cards.filter((el,ind)=>{
+            return ind!=id;
+        })
+        this.setState({cards:updatedList})
+      }
+
     render() {
         return (
             <>
             <div className="searchbar-outer">
 
               <div className="searchbar-container">
-                    <form  onSubmit={this.getShortUrl}>
-
-                        
+                    <form  onSubmit={this.getShortUrl}>    
                         <input type="text" value={ this.state.value } id="input" onChange={this.urlText} placeholder="Shorten a link here..." className={this.state.empty || this.state.falseLink ? 'urlInput emptyInput': 
                         'urlInput'}/>
-
+                        
                         {this.state.empty && <span className="empty-error">Please enter url</span>}
 
                         {this.state.falseLink && <span className="false-link-error">Please enter a valid url</span> }
                         
-                        
                         <input  type ="submit"  className="sub-btn" value="Shorten it!"/>
-                       
                        
                      </form>
                      
@@ -75,6 +91,7 @@ export default class Searchbar extends Component {
                     this.state.cards.map((card,i) => {
                         return(
                             <div className="urlCards" key={i}>
+                                
                                 <p className="org-url">{card.original_url}</p>
                                 <span className="horizontal-line"></span>
 
@@ -82,6 +99,7 @@ export default class Searchbar extends Component {
                                     <a className =" short-url" href={card.original_url} target="_blank">{card.url}</a>
                                     <button className ="copy-btn" onClick={() => this.copy(card.url,i)}>Copy</button>
                                 </div>
+                                <img src={cross} alt=""  onClick={() => this.delete(i)}/>
                             </div>
                         )
                     })
